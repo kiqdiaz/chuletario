@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  python-odbc-sql_server:
+    build: .
+    container_name: python-odbc-sql_server
+    volumes:
+      - ./src:/app
+    command:
+    - bash
+    - -c
+    - |
+      python /app/main.py
+    # depends_on:
+    #   - container_such_sql_server
+    restart: always
