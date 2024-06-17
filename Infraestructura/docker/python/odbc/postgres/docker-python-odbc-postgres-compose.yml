@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+ python-odbc-postgres:
+    image: python:3.11
+    container_name: python-odbc-postgres
+    volumes:
+      - ./src:/app
+    command:
+    - bash
+    - -c
+    - |
+      python /app/main.py
+    # depends_on:
+    #   - container_such_postgres_db
+    restart: always
